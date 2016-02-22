@@ -90,6 +90,9 @@
             }
 
             mat[career_id][subject_id] = 1;
+            arr2.push(career_id+"-"+subject_id);
+
+            $("#subjects").val(JSON.stringify(arr2));
 
             appendOption(subject_text, career_text, subject_id, career_id);
             $("#career").val(0);
@@ -104,7 +107,14 @@
             $("#option-"+subject_id+'-'+career_id).click(function(e){
                 $("#op-"+subject_id+'-'+career_id).remove();
                 mat[career_id][subject_id] = 0;
-            })
+
+                var idx = arr2.indexOf(career_id+"-"+subject_id);
+
+                if(idx > -1){
+                    arr2.splice(idx, 1);
+                }
+                $("#subjects").val(JSON.stringify(arr2));
+            });
         }
     });
 </script>
