@@ -13,7 +13,7 @@
 
 <div class="row">
 	<a data-toggle="modal" data-target="#addSubject">
-		<div class="col-sm-10 col-sm-offset-1 subject subject-footer">
+		<div class="col-sm-10 col-sm-offset-1 subject subject-footer footer-style">
 			Agregar nuevas preferencias
 		</div>
 	</a>
