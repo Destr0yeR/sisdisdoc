@@ -4,6 +4,8 @@
 	<title>DISPONIBILIDAD DOCENTE</title>
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css') }}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/main.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ asset('css/professor.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ asset('css/schedule.css') }}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('fonts/font-awesome/css/font-awesome.min.css') }}">
 
 
