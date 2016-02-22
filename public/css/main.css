@@ -38,6 +38,8 @@ div.subject-header{
 	color: white;
 	font-weight: bold;
 	border:2px solid black !important;
+	font-size: 20px;
+	margin-top: 10px;
 }
 
 .footer-style{	
@@ -47,4 +49,29 @@ div.subject-header{
 	font-weight: bold;
 	border:2px solid black !important;
 	padding: 5px;
+	margin-bottom: 10px;
+}
+.btn-container{
+	text-align: center;
+	margin-top: 10px;
+	margin-bottom: 30px;
+}
+
+.btn-bottom-page
+{
+	border-radius: 0px !important;
+	border:2px solid black !important;
+	font-weight: bold;
+}
+
+.section-container
+{
+	margin-top:0px;
+	margin-bottom:30px;
+	margin-left:90px;
+	margin-right:90px;
+	border:2px solid black !important;
+}
+.section-header{
+	font-weight: bold;
 }
