@@ -1,0 +1,53 @@
+body{
+	text-align: center;
+}
+legend{
+    width:inherit; /* Or auto */
+    padding:0 10px; /* To give a bit of padding on the left and right */
+    margin: 20px;
+    border-bottom:none;
+}
+fieldset{
+     border:solid;
+     padding: 10px 0px 20px 0px !important;
+}
+h4{
+	width: 50%;
+	margin-top: 0px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.div_login{
+	width: 45%;
+  	display: block;
+  	margin-left: auto;
+  	margin-right: auto;
+}
+.div_login>fieldset>form>div{
+	margin-top: 5px;
+	margin-bottom: 25px;
+}
+.div_login>fieldset>form>div>label{
+	margin-left: 30px;
+}
+#pass,#code,#email{
+	width: 70%;
+	margin-right: 70px;
+}
+#enviar,#recuperar,#boton-modal{
+	margin: auto;
+	float: none;
+	width: 50%;
+	padding: 0px;
+}
+.error>a{
+	color: red;
+}
+.error{
+	display: none;
+}
+.modal-sm{
+	margin-left: auto;
+	margin-right: auto;
+}
