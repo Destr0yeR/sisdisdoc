@@ -25,6 +25,6 @@ class User extends Authenticatable
     ];
 
     public function category(){
-        return $this->belongsTo('Models\Category');
+        return $this->belongsTo('App\Models\Category');
     }
 }

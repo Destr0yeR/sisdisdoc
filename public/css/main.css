@@ -1,0 +1,19 @@
+.schedule-button{
+	padding: 1%;
+	vertical-align: bottom;
+	position: relative;
+}
+
+.schedule-link{
+	position: absolute;
+	display: block;
+	height: 100%;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+a.schedule-link:hover{
+	background-color: black;
+}
