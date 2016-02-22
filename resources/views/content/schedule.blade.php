@@ -28,6 +28,12 @@
 	</div>
 </div>
 
+<div class="row">
+	<div class="col-sm-10 col-sm-offset-1">
+		Faltan Asignar <a style="cursor: none" id="left">{{ $user->category->max_time }}</a> hora(s)
+	</div>
+</div>
+
 <input type="hidden" id="max_time" value="{{ $user->category->max_time }}"></input>
 <input type="hidden" id="schedule"></input>
 
@@ -60,8 +66,7 @@
 	   		}
 
 	   		$("#schedule").val(JSON.stringify(arr));
-
-	   		console.log($("#schedule").val());
+	   		$("#left").html(times);
 	   });
 
 	});
