@@ -16,4 +16,9 @@
 
 a.schedule-link:hover{
 	background-color: black;
+	cursor: pointer;
+}
+
+a.schedule-link.selected{
+	background-color: yellow;
 }

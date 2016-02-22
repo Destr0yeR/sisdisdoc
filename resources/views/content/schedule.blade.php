@@ -13,11 +13,11 @@
 			</tr>
 			@for($i = 1 ; $i <= 14 ; ++$i)
 				<tr>
-					<td>{{ $i + 7 }}</td>
+					<td>{{ $i + 7 }} - {{ $i + 8 }}</td>
 
 					@for($j = 1 ; $j <= 7 ; ++$j)
 						<td class="schedule-button">
-							<a href="{{ 7*($i-1) + $j }}" class="schedule-link">
+							<a class="schedule-link" id="cell{{ 7*($i-1) + $j }}">
 								
 							</a>
 						</td>
@@ -27,3 +27,42 @@
 		</table>
 	</div>
 </div>
+
+<input type="hidden" id="max_time" value="{{ $user->category->max_time }}"></input>
+<input type="hidden" id="schedule"></input>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+
+	   	var times = $("#max_time").val();
+	   	var arr = [];
+
+	   $(".schedule-link").click(function(e){
+	   		var id = e.target.id;
+	   		var item = $("#"+id);
+	   		var nid = id.substring(4);
+
+	   		if(!item.hasClass("selected")){
+	   			if(times == 0)return;
+	   			$(item).addClass("selected");
+	   			times--;
+	   			arr.push(nid);
+	   		}
+	   		else{
+	   			$(item).removeClass("selected");
+	   			times++;
+
+	   			var idx = arr.indexOf(nid);
+
+	   			if(idx > -1){
+	   				arr.splice(idx, 1);
+	   			}
+	   		}
+
+	   		$("#schedule").val(JSON.stringify(arr));
+
+	   		console.log($("#schedule").val());
+	   });
+
+	});
+</script>
