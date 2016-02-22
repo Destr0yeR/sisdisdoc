@@ -7,9 +7,7 @@
 </head>
 <body>
 	<div class="container">
-		<form class="auth-form">
-			@yield('content')
-		</form>
+		@yield('content')
 	</div>
 </body>
 </html>
