@@ -1,0 +1,14 @@
+.auth-form{
+	width: 400px;
+	padding: 15px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+body{
+	padding-top: 50px;
+}
+
+button.btn-auth{
+	font-size: 18px;
+}

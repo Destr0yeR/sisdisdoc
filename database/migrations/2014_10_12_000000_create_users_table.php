@@ -14,11 +14,23 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->string('email')->unique();
+
+            $table->string('nombres');
+            $table->string('apmaterno');
+            $table->string('appaterno');
+            $table->string('codigo');
+            $table->string('email');
+            $table->integer('category_id')->unsigned();
+
             $table->string('password', 60);
+
             $table->rememberToken();
             $table->timestamps();
+        });
+
+        Schema::table('users', function(Blueprint $table){
+            $table  ->foreign('category_id')->references('id')
+                    ->on('categories')->onDelete('cascade');
         });
     }
 
@@ -29,6 +41,10 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
+        Schema::table('users', function(Blueprint $table){
+            $table  ->dropForeign('users_category_id_foreign');
+        });
+
         Schema::drop('users');
     }
 }
