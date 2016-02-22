@@ -71,6 +71,7 @@
                 mat[i][j] = 0;
             }
         }
+        var arr2 = [];
 
         $(".addOption").click(function(e){
             var career_text = $("#career option:selected").text();
@@ -79,17 +80,31 @@
             var subject_text = $("#subject option:selected").text();
             var subject_id = $("#subject").val();
 
+            if(career_id == 0 || subject_id == 0){
+                
+                return;
+            }
+
             if(mat[career_id][subject_id] == 1){
                 return;
             }
 
             mat[career_id][subject_id] = 1;
 
-            appendOption(subject_text, career_text);
+            appendOption(subject_text, career_text, subject_id, career_id);
+            $("#career").val(0);
+            $("#subject").val(0);
+
+            $("#addSubject").modal('toggle');
         });
 
-        function appendOption(subject, career){
-            $("#subject-items").append('<div class="col-sm-5"><div class="item-border">'+subject+'</div></div><div class="col-sm-5"><div class="item-border">'+career+'</div></div><div class="col-sm-2"><i class="fa fa-minus-circle"></i></div>');
+        function appendOption(subject, career, subject_id, career_id){
+            $("#subject-items").append('<div class="row" id="op-'+subject_id+'-'+career_id+'"><div class="col-sm-5"><div class="item-border">'+subject+'</div></div><div class="col-sm-5"><div class="item-border">'+career+'</div></div><div class="col-sm-2"><a style="cursor: pointer;" id="option-'+subject_id+'-'+career_id+'" class="deleteOption"><i class="fa fa-minus-circle"></i></a></div>');
+
+            $("#option-"+subject_id+'-'+career_id).click(function(e){
+                $("#op-"+subject_id+'-'+career_id).remove();
+                mat[career_id][subject_id] = 0;
+            })
         }
     });
 </script>
