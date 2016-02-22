@@ -1,7 +1,7 @@
 @extends('layout.base')
 
 @section('content')
-	<form method="POST">
+	<form method="POST" action="{{ route('save.changes') }}">
 		@include('content.professor')
 		@include('content.schedule')
 		@include('content.subjects')

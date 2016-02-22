@@ -35,7 +35,7 @@
 </div>
 
 <input type="hidden" id="max_time" value="{{ $user->category->max_time }}"></input>
-<input type="hidden" id="schedule"></input>
+<input type="hidden" id="schedule" name="schedule"></input>
 
 <script type="text/javascript">
 	$(document).ready(function(){

@@ -22,3 +22,12 @@ a.schedule-link:hover{
 a.schedule-link.selected{
 	background-color: yellow;
 }
+
+div.subject{
+	border: solid;
+	border-width: 1px;
+}
+
+div.subject-footer{
+	cursor: pointer;
+}
