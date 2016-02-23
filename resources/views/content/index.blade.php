@@ -8,9 +8,10 @@
 		<div class="row">
 			<div class="col-md-10 col-md-offset-1">
 				<div class="btn-container">
-				<button class="btn btn-primary btn-bottom-page">Guardar Cambios</button>
+				<button class="btn btn-primary btn-bottom-page save-changes">Guardar Cambios</button>
 				</div>
 			</div>
 		</div>
 	</form>
+
 @stop

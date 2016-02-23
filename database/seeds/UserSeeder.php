@@ -15,5 +15,6 @@ class UserSeeder extends Seeder
     {
         //
         User::create(['nombres' => 'Javier Francisco', 'appaterno' => 'Palomino', 'apmaterno' => 'Pinchi', 'codigo' => '12345', 'email' => 'jfpp92@gmail.com', 'password' => bcrypt('12345'), 'category_id' => 1]);
+        User::create(['nombres' => 'Javier Francisco', 'appaterno' => 'Palomino', 'apmaterno' => 'Pinchi', 'codigo' => '1234', 'email' => 'jfpp92@gmail.com', 'password' => bcrypt('12345'), 'category_id' => 1]);
     }
 }

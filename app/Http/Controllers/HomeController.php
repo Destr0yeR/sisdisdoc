@@ -77,6 +77,6 @@ class HomeController extends Controller
 
         $user->save();
 
-        return redirect()->route('index');
+        return redirect()->route('index')->with(["modal" => true]);
     }
 }
