@@ -29,7 +29,7 @@ class AuthController extends Controller
             return redirect()->route('index');
         }
         
-        return redirect()->back()->withErrors(['Credenciales inválidas!']);
+        return redirect()->back()->withErrors(['Credenciales inválidas!'])->withInput();
     }
 
     public function logout(){
