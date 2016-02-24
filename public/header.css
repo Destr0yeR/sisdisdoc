@@ -14,3 +14,14 @@
     display: table-cell;
     vertical-align: middle;
 }
+
+#header-logout{
+	width: 100px;
+	float: right;
+	font-size: 15px;
+	vertical-align: middle;
+	margin-top: 5px;
+	border-style: solid;
+	color: black;
+	background-color: rgb(153,153,153);
+}

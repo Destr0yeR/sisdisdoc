@@ -75,3 +75,8 @@ div.subject-header{
 .section-header{
 	font-weight: bold;
 }
+
+#subject-error{
+	color: red;
+	text-align: center;
+}

@@ -56,6 +56,7 @@
 
 	   	var times = $("#max_time").val();
 	   	var arr = [];
+	   	$("#scheduleOk").val(0);
 
 	   $(".schedule-link").click(function(e){
 	   		var id = e.target.id;
@@ -77,6 +78,21 @@
 	   			if(idx > -1){
 	   				arr.splice(idx, 1);
 	   			}
+	   		}
+
+	   		if(times == 0){
+	   			$("#scheduleOk").val(1);
+
+	   			if($("#subjectsOk").val() == 1){
+	   				$("#saveButton").attr("data-target", "#saveChangesModal");
+	   			}
+	   			else{
+	   				$("#saveButton").attr("data-target", "#saveChangesModalSubjectsFail");
+	   			}
+	   		}
+	   		else{
+	   			$("#scheduleOk").val(0);	
+	   			$("#saveButton").attr("data-target", "#saveChangesModalScheduleFail");
 	   		}
 
 	   		$("#schedule").val(JSON.stringify(arr));
