@@ -23,6 +23,11 @@ a.schedule-link.selected{
 	background-color: yellow;
 }
 
+.schedule-selected-done{
+	background-color: yellow;
+}
+
+
 div.subject{
 	border: solid;
 	border-width: 1px;

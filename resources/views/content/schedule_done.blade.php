@@ -29,10 +29,7 @@
 						<td class="schedule-static-header">{{ $i + 7 }} - {{ $i + 8 }}</td>
 
 						@for($j = 1 ; $j <= 7 ; ++$j)
-							<td class="schedule-button">
-								<a class="schedule-link @if($schedule[ 7*($i-1) + $j ]) selected @endif" id="cell{{ 7*($i-1) + $j }}">
-									
-								</a>
+							<td class="schedule-button @if($schedule[ 7*($i-1) + $j ]) schedule-selected-done @endif">							
 							</td>
 						@endfor
 					</tr>
