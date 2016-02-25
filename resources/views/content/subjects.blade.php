@@ -151,7 +151,7 @@
 
                 if(total == 0){
                     $("#subjectsOk").val(0);
-                    $("#saveButton").attr("data-target", "#saveChangesModalScheduleFail");
+                    $("#saveButton").attr("data-target", "#saveChangesModalSubjectsFail");
                 }
                 else{
                     $("#subjectsOk").val(1);
