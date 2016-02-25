@@ -36,18 +36,18 @@
           <div class="row">
             <div class="col-sm-8 col-sm-offset-2">
               <div class="form-group">
-                <select class="form-control" id="subject">
-                  <option value="0">Seleccione el curso</option>
-                  @foreach($subjects as $subject)
-                    <option value="{{ $subject->id }}">{{ $subject->name }}</option>
-                  @endforeach
-                </select>
-              </div>
-              <div class="form-group">
                 <select class="form-control" id="career">
                   <option value="0">Seleccione la escuela</option>
                   @foreach($careers as $career)
                     <option value="{{ $career->id }}">{{ $career->name }}</option>
+                  @endforeach
+                </select>
+              </div>
+              <div class="form-group">
+                <select class="form-control" id="subject">
+                  <option value="0">Seleccione el curso</option>
+                  @foreach($subjects as $subject)
+                    <option value="{{ $subject->id }}">{{ $subject->name }}</option>
                   @endforeach
                 </select>
               </div>
@@ -159,5 +159,9 @@
                 }
             });
         }
+
+        $("#career").change(function(e){
+            var route = 
+        });
     });
 </script>

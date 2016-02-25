@@ -4,6 +4,7 @@
 	<form method="POST" action="{{ route('save.changes') }}">
 		<input type="hidden" id="subjectsOk" value="0"></input>
 		<input type="hidden" id="scheduleOk" value="0"></input>
+		<input type="hidden" id="base_path" value="{{ route('index') }}"></input>
 		@include('content.professor')
 		@include('content.schedule')
 		@include('content.subjects')

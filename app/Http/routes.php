@@ -10,3 +10,8 @@ Route::group(['middleware' => ['web']], function () {
 
 	Route::get('/logout', ['as' => 'logout', 'uses' => 'AuthController@logout']);
 });
+
+
+Route::group(['middleware' => ['api']], function(){
+	Route::get('/subjects/{career_id}', ['as' => 'get.subjects', 'uses' => 'HomeController@getSubjects']);
+});
