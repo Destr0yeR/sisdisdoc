@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-use App\Models\Subjects;
+use App\Models\Subject;
 
 class FormController extends Controller
 {
@@ -15,10 +15,12 @@ class FormController extends Controller
 
     public function getSubjects($career_id){
     	$data = [
-    		'subjects' => Subjects::where('')
+    		'subjects' => Subject::where('career_id', $career_id)->get()
     	];
 
-    	return response()->json($data);
+        $view = view('select.subjects', $data)->render();
+
+    	return response()->json(['html' => $view]);
     }
 
     private function format($subjects){

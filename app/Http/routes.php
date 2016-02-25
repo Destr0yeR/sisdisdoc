@@ -13,5 +13,5 @@ Route::group(['middleware' => ['web']], function () {
 
 
 Route::group(['middleware' => ['api']], function(){
-	Route::get('/subjects/{career_id}', ['as' => 'get.subjects', 'uses' => 'HomeController@getSubjects']);
+	Route::get('/subjects/{career_id}', ['as' => 'get.subjects', 'uses' => 'FormController@getSubjects']);
 });

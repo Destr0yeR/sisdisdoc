@@ -53,8 +53,8 @@ div.subject-header{
 }
 .btn-container{
 	text-align: center;
-	margin-top: 10px;
-	margin-bottom: 30px;
+	margin-top: 5px;
+	margin-bottom: 5px;
 }
 
 .btn-bottom-page
@@ -75,8 +75,31 @@ div.subject-header{
 .section-header{
 	font-weight: bold;
 }
+.subject-items{
+	text-align: center !important;
+}
 
+.subject-content{
+	text-align: center;
+}
 #subject-error{
 	color: red;
 	text-align: center;
+}
+
+* {
+	margin: 0;
+}
+html, body {
+	height: 100%;
+}
+.wrapper {
+	min-height: 100%;
+	height: auto !important; /* This line and the next line are not necessary unless you need IE6 support */
+	height: 100%;
+	margin: 0 auto -30px; /* the bottom margin is the negative value of the footer's height */
+	position: relative;
+}
+.footer, .push {
+	height: 30px; /* .push must be the same height as .footer */
 }

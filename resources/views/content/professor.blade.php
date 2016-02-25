@@ -1,6 +1,6 @@
 <div class="row" style="margin-top:15px;">
 	<div class="col-sm-10 col-sm-offset-1">
-		<table class="table table-bordered teacher-table">
+		<table class="table table-bordered teacher-table" style="margin-bottom:5px">
 			<tr>
 			<td colspan="7"  class="table-header">			
 					DATOS DE DOCENTE

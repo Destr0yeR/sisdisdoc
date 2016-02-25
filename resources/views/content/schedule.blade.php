@@ -1,48 +1,58 @@
-<div class="row" >
-	<div class="col-sm-10 col-sm-offset-1 section-header">	
-			1-Disponibilidad De Horarios
-	</div>
-</div>
-
-<div>
-	<div class="row">
-		<div class="col-sm-10 col-sm-offset-1 schedule-header">
-			Seleccione la casilla correspondiente a la hora del dia en la que quiere dictar un curso
+<div id="schedule-section">
+	<div class="row" >
+		<div class="col-sm-10 col-sm-offset-1 section-header">	
+				1-Disponibilidad De Horarios
 		</div>
 	</div>
-	<div class="row">
-		<div class="col-sm-10 col-sm-offset-1">
-			<table class="table table-bordered">
-				<tr>
-					<td class="schedule-static-header"></td>
-					<td class="schedule-static-header">Lunes</td>
-					<td class="schedule-static-header">Martes</td>
-					<td class="schedule-static-header">Miércoles</td>
-					<td class="schedule-static-header">Jueves</td>
-					<td class="schedule-static-header">Viernes</td>
-					<td class="schedule-static-header">Sábado</td>
-					<td class="schedule-static-header">Domingo</td>
-				</tr>
-				@for($i = 1 ; $i <= 14 ; ++$i)
+
+	<div>
+		<div class="row">
+			<div class="col-sm-10 col-sm-offset-1 schedule-header">
+				Seleccione la casilla correspondiente a la hora del dia en la que quiere dictar un curso
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-10 col-sm-offset-1">
+				<table class="table table-bordered table-no-bottom-margin">
 					<tr>
-						<td class="schedule-static-header">{{ $i + 7 }} - {{ $i + 8 }}</td>
-
-						@for($j = 1 ; $j <= 7 ; ++$j)
-							<td class="schedule-button">
-								<a class="schedule-link" id="cell{{ 7*($i-1) + $j }}">
-									
-								</a>
-							</td>
-						@endfor
+						<td class="schedule-static-header"></td>
+						<td class="schedule-static-header">Lunes</td>
+						<td class="schedule-static-header">Martes</td>
+						<td class="schedule-static-header">Miércoles</td>
+						<td class="schedule-static-header">Jueves</td>
+						<td class="schedule-static-header">Viernes</td>
+						<td class="schedule-static-header">Sábado</td>
+						<td class="schedule-static-header">Domingo</td>
 					</tr>
-				@endfor
-			</table>
+					@for($i = 1 ; $i <= 14 ; ++$i)
+						<tr>
+							<td class="schedule-static-header">{{ $i + 7 }} - {{ $i + 8 }}</td>
+
+							@for($j = 1 ; $j <= 7 ; ++$j)
+								<td class="schedule-button">
+									<a class="schedule-link" id="cell{{ 7*($i-1) + $j }}">
+										
+									</a>
+								</td>
+							@endfor
+						</tr>
+					@endfor
+				</table>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-10 col-sm-offset-1 schedule-footer">
+				Ha asignado <a style="cursor: none" id="current">0</a> hora(s)
+			</div>
 		</div>
 	</div>
 
 	<div class="row">
-		<div class="col-sm-10 col-sm-offset-1 schedule-footer">
-			Ha asignado <a style="cursor: none" id="current">0</a> hora(s)
+		<div class="col-md-10 col-md-offset-1">
+			<div class="btn-container">
+					<a id="nxtButton" class="btn btn-primary btn-bottom-page">Siguiente Sección</a>
+			</div>	
 		</div>
 	</div>
 </div>
@@ -51,6 +61,16 @@
 <input type="hidden" id="max_time" value="{{ $user->category->max_time }}"></input>
 <input type="hidden" id="last_time" value="{{ $user->last }}"></input>
 <input type="hidden" id="schedule" name="schedule"></input>
+
+<script type="text/javascript">
+		$(document).ready(function(){
+			$("#nxtButton").click(function(){
+				$('#schedule-section').addClass('hidden');
+				$('#subject-section').removeClass('hidden');
+				$('#save-changes-section').removeClass('hidden');
+			});
+		});
+</script>
 
 <script type="text/javascript">
 	$(document).ready(function(){
