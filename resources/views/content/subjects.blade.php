@@ -38,18 +38,18 @@
             <div class="row">
               <div class="col-sm-8 col-sm-offset-2">
                 <div class="form-group">
-                  <select class="form-control" id="subject">
-                    <option value="0">Seleccione el curso</option>
-                    @foreach($subjects as $subject)
-                      <option value="{{ $subject->id }}">{{ $subject->name }}</option>
-                    @endforeach
-                  </select>
-                </div>
-                <div class="form-group">
                   <select class="form-control" id="career">
                     <option value="0">Seleccione la escuela</option>
                     @foreach($careers as $career)
                       <option value="{{ $career->id }}">{{ $career->name }}</option>
+                    @endforeach
+                  </select>
+                </div>
+                <div class="form-group">
+                  <select class="form-control" id="subject" disabled="disabled">
+                    <option value="0">Seleccione el curso</option>
+                    @foreach($subjects as $subject)
+                      <option value="{{ $subject->id }}">{{ $subject->name }}</option>
                     @endforeach
                   </select>
                 </div>
@@ -90,6 +90,7 @@
         $("#subjectsOk").val(0);
 
         $(".addOption").click(function(e){
+
             var career_text = $("#career option:selected").text();
             var career_id = $("#career").val();
 
@@ -161,6 +162,22 @@
                 }
             });
         }
+
+        $("#career").change(function(e){
+            var route = $("#base_path").val();
+            route = route + '/subjects/'+$("#career").val();
+
+            if($("#career").val() == 0){
+                $("#subject").val(0);
+                $("#subject").prop('disabled', true);
+                return;
+            }
+
+            $.get(route, function(data){
+                $("#subject").prop('disabled', false);
+                $("#subject").html(data.html);
+            });
+        });
     });
 </script>
 
