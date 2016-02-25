@@ -25,6 +25,16 @@ class LoginRequest extends Request
     {
         return [
             //
+            'codigo'    => 'required',
+            'password'  => 'required'
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'codigo.required' => 'El codigo de docente es requerido.',
+            'password.required'  => 'El password es requerido.',
         ];
     }
 }

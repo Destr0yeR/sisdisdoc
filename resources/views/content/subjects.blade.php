@@ -52,6 +52,9 @@
                   @endforeach
                 </select>
               </div>
+              <div class="form-group">
+                <div id="subject-error"></div>
+              </div>
             </div>
           </div>
         </div>
@@ -82,6 +85,9 @@
         }
         var arr2 = [];
 
+        var total = 0;
+        $("#subjectsOk").val(0);
+
         $(".addOption").click(function(e){
             var career_text = $("#career option:selected").text();
             var career_id = $("#career").val();
@@ -90,11 +96,12 @@
             var subject_id = $("#subject").val();
 
             if(career_id == 0 || subject_id == 0){
-                
+                $("#subject-error").text("Debe seleccionar la curso y la escuela a la que desea enseñar");
                 return;
             }
 
             if(mat[career_id][subject_id] == 1){
+                $("#subject-error").text("Este par de Curso - Escula ya ha sido asignado. Eliga otras opciones.");
                 return;
             }
 
@@ -102,12 +109,26 @@
             arr2.push(career_id+"-"+subject_id);
 
             $("#subjects").val(JSON.stringify(arr2));
+            total++;
+
+            if(total == 0){
+                $("#subjectsOk").val(0);
+                $("#saveButton").attr("data-target", "#saveChangesModalScheduleFail");
+            }
+            else{
+                $("#subjectsOk").val(1);
+
+                if($("#scheduleOk").val() == 1){
+                    $("#saveButton").attr("data-target", "#saveChangesModal");
+                }
+            }
 
             appendOption(subject_text, career_text, subject_id, career_id);
             $("#career").val(0);
             $("#subject").val(0);
 
             $("#addSubject").modal('toggle');
+            $("#subject-error").text('');
         });
 
         function appendOption(subject, career, subject_id, career_id){
@@ -123,6 +144,20 @@
                     arr2.splice(idx, 1);
                 }
                 $("#subjects").val(JSON.stringify(arr2));
+                total--;
+
+
+                if(total == 0){
+                    $("#subjectsOk").val(0);
+                    $("#saveButton").attr("data-target", "#saveChangesModalScheduleFail");
+                }
+                else{
+                    $("#subjectsOk").val(1);
+
+                    if($("#scheduleOk").val() == 1){
+                        $("#saveButton").attr("data-target", "#saveChangesModal");
+                    }
+                }
             });
         }
     });

@@ -1,0 +1,27 @@
+.app-header{
+	text-align: center;
+	height: 10%;
+	background-color: rgb(153,153,153);
+	color: black;
+	font-size:x-large;
+	font-weight: bold;
+	border-color: black;
+	border-bottom-style: solid;
+}
+#header-content-container {display: table;}
+
+#header-content {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+#header-logout{
+	width: 100px;
+	float: right;
+	font-size: 15px;
+	vertical-align: middle;
+	margin-top: 5px;
+	border-style: solid;
+	color: black;
+	background-color: rgb(153,153,153);
+}
