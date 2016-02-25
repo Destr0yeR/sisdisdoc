@@ -7,15 +7,33 @@
 		@include('content.professor')
 		@include('content.schedule')
 		@include('content.subjects')
-		<div class="row">
-			<div class="col-md-10 col-md-offset-1">
-				<div class="btn-container">
-				<a id="saveButton" class="btn btn-primary btn-bottom-page" data-toggle="modal" data-target="#saveChangesModalScheduleFail">Guardar Cambios</a>
-				<button class="btn btn-primary btn-bottom-page hidden" id="confirmButton">Guardar Cambios</button>
+		<div id="save-changes-section" class="hidden">			
+			<div class="row">
+				<div class="col-md-1 col-md-offset-4">
+					<div class="btn-container">
+							<a id="backButton" class="btn btn-primary btn-bottom-page">Anterior Sección</a>
+					</div>
+				</div>
+				<div class="col-md-1 col-md-offset-1">	
+					<div class="btn-container">
+						<a id="saveButton" class="btn btn-primary btn-bottom-page" data-toggle="modal" data-target="#saveChangesModalScheduleFail">Guardar Cambios</a>
+						<button class="btn btn-primary btn-bottom-page hidden" id="confirmButton">Guardar Cambios</button>
+					</div>
 				</div>
 			</div>
 		</div>
 	</form>
+
+	<script type="text/javascript">
+			$(document).ready(function(){
+				$("#backButton").click(function(){
+					$('#schedule-section').removeClass('hidden');
+					$('#subject-section').addClass('hidden');
+					$('#save-changes-section').addClass('hidden');
+				});
+			});
+	</script>
+
 	<script type="text/javascript">
 		$(document).ready(function(){
 			$("#saveChangesButton").click(function(){
@@ -45,6 +63,7 @@
 		  </div>
 		</div>
 	</div>
+
 	<div class="modal fade" id="saveChangesModalSubjectsFail" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 		<div class="modal-dialog" role="document">
 		  <div class="modal-content">

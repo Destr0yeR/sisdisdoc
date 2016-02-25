@@ -10,6 +10,7 @@
 			Seleccione la casilla correspondiente a la hora del dia en la que quiere dictar un curso
 		</div>
 	</div>
+	
 	<div class="row">
 		<div class="col-sm-10 col-sm-offset-1">
 			<table class="table table-bordered">
