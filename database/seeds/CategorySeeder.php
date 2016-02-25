@@ -15,5 +15,8 @@ class CategorySeeder extends Seeder
     {
         //Category::create(['name' => '', 'max_time' => ]);
         Category::create(['name' => 'Asistente', 'max_time' => 20]);
+        Category::create(['name' => 'Asistente2', 'max_time' => 15]);
+        Category::create(['name' => 'Asistente3', 'max_time' => 10]);
+        Category::create(['name' => 'Asistente4', 'max_time' => 13]);
     }
 }

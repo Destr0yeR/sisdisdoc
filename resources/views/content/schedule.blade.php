@@ -42,20 +42,25 @@
 
 	<div class="row">
 		<div class="col-sm-10 col-sm-offset-1 schedule-footer">
-			Faltan Asignar <a style="cursor: none" id="left">{{ $user->category->max_time }}</a> hora(s)
+			Ha asignado <a style="cursor: none" id="current">0</a> hora(s)
 		</div>
 	</div>
 </div>
 
 
 <input type="hidden" id="max_time" value="{{ $user->category->max_time }}"></input>
+<input type="hidden" id="last_time" value="{{ $user->last }}"></input>
 <input type="hidden" id="schedule" name="schedule"></input>
 
 <script type="text/javascript">
 	$(document).ready(function(){
 
-	   	var times = $("#max_time").val();
+	   	var max_time = $("#max_time").val();
+	   	var last = $("#last_time").val();
 	   	var arr = [];
+
+	   	var times = 0;
+	   	
 	   	$("#scheduleOk").val(0);
 
 	   $(".schedule-link").click(function(e){
@@ -64,14 +69,14 @@
 	   		var nid = id.substring(4);
 
 	   		if(!item.hasClass("selected")){
-	   			if(times == 0)return;
+	   			if(times == max_time)return;
 	   			$(item).addClass("selected");
-	   			times--;
+	   			times++;
 	   			arr.push(nid);
 	   		}
 	   		else{
 	   			$(item).removeClass("selected");
-	   			times++;
+	   			times--;
 
 	   			var idx = arr.indexOf(nid);
 
@@ -79,8 +84,8 @@
 	   				arr.splice(idx, 1);
 	   			}
 	   		}
-
-	   		if(times == 0){
+	   		if(max_time == last)last--;
+	   		if(times > last){
 	   			$("#scheduleOk").val(1);
 
 	   			if($("#subjectsOk").val() == 1){
@@ -96,7 +101,8 @@
 	   		}
 
 	   		$("#schedule").val(JSON.stringify(arr));
-	   		$("#left").html(times);
+	   		//$("#left").html(max_time - times);
+	   		$("#current").html(times);
 	   });
 
 	});
