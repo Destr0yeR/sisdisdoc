@@ -11,9 +11,9 @@
 				<td class="info-header">Apellido Paterno</td>
 				<td class="info-header">Apellido Materno</td>
 				<td class="info-header">Nombres</td>
-				<td class="info-header">Ultimo</td>
+				<td class="info-header">Horas Dictadas En El Ciclo Anterior</td>
 				<td class="info-header">Categoría/Clase</td>
-				<td class="info-header">Horas</td>
+				<td class="info-header">Horas Tope</td>
 			</tr>
 			<tr>
 			<td class="table-info">{{ $user->codigo }}</td>
