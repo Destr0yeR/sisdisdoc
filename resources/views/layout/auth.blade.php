@@ -6,8 +6,9 @@
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/auth.css') }}">
 </head>
 <body>
-	<div class="container">
+	<div class="container-fluid">
 		@yield('content')
 	</div>
+</div>
 </body>
 </html>

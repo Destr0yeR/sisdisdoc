@@ -75,3 +75,11 @@ div.subject-header{
 .section-header{
 	font-weight: bold;
 }
+
+.subject-items{
+	text-align: center !important;
+}
+
+.subject-content{
+	text-align: center;
+}

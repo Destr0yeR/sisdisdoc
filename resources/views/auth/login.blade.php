@@ -13,4 +13,5 @@
 			<button class="btn btn-primary btn-block btn-auth">Log In</button>
 		</div>
 	</form>
+
 @stop
