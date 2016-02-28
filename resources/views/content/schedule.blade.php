@@ -13,7 +13,7 @@
 		</div>
 		<div class="row">
 			<div class="col-sm-10 col-sm-offset-1">
-				<table class="table table-bordered table-no-bottom-margin">
+				<table class="table table-bordered table-no-bottom-margin" style="margin-bottom:5px">
 					<tr>
 						<td class="schedule-static-header"></td>
 						<td class="schedule-static-header">Lunes</td>
@@ -43,7 +43,7 @@
 
 		<div class="row">
 			<div class="col-sm-10 col-sm-offset-1 schedule-footer">
-				Ha asignado <a style="cursor: none" id="current">0</a> hora(s)
+				Ha asignado <a style="cursor: none" id="current">0</a> hora(s).<br/> Usted debe seleccionar , de ser posible , una cantidad mayor a el numero de horas que dicto el ciclo anterior.
 			</div>
 		</div>
 	</div>
@@ -51,7 +51,7 @@
 	<div class="row">
 		<div class="col-md-10 col-md-offset-1">
 			<div class="btn-container">
-					<a id="nxtButton" class="btn btn-primary btn-bottom-page">Siguiente Sección</a>
+					<a id="nxtButton" class="btn btn-primary btn-bottom-page" data-toggle="modal" data-target="#saveChangesModalScheduleFail">Siguiente Sección</a>
 			</div>	
 		</div>
 	</div>
@@ -65,9 +65,12 @@
 <script type="text/javascript">
 		$(document).ready(function(){
 			$("#nxtButton").click(function(){
-				$('#schedule-section').addClass('hidden');
-				$('#subject-section').removeClass('hidden');
-				$('#save-changes-section').removeClass('hidden');
+
+				if($("#scheduleOk").val() == 1){
+					$('#schedule-section').addClass('hidden');
+					$('#subject-section').removeClass('hidden');
+					$('#save-changes-section').removeClass('hidden');
+	   			}
 			});
 		});
 </script>
@@ -107,6 +110,8 @@
 	   		if(max_time == last)last--;
 	   		if(times > last){
 	   			$("#scheduleOk").val(1);
+   				$("#nxtButton").attr("data-toggle","none");
+   				$("#nxtButton").attr("data-target","none");
 
 	   			if($("#subjectsOk").val() == 1){
 	   				$("#saveButton").attr("data-target", "#saveChangesModal");
@@ -117,7 +122,8 @@
 	   		}
 	   		else{
 	   			$("#scheduleOk").val(0);	
-	   			$("#saveButton").attr("data-target", "#saveChangesModalScheduleFail");
+	   			$("#nxtButton").attr("data-target", "#saveChangesModalScheduleFail");
+	   			$("#nxtButton").attr("data-toggle", "modal");
 	   		}
 
 	   		$("#schedule").val(JSON.stringify(arr));
