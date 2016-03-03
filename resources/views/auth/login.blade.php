@@ -19,7 +19,7 @@
 		    </div>
 		@endif
 		<div class="form-group">
-			<button class="btn btn-primary btn-block btn-auth">Log In</button>
+			<button class="btn btn-primary btn-block btn-auth">Ingresar</button>
 		</div>
 	</form>
 

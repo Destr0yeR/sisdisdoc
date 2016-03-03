@@ -5,7 +5,7 @@
 			SISTEMA DE DISPONIBILIDAD DE HORARIOS
 				<a href="{{ route('logout') }}">
 					<div id="header-logout">
-						Logout
+						Salir
 					</div>
 				</a>
 			</div>
