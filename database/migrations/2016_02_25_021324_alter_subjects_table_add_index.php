@@ -32,7 +32,7 @@ class AlterSubjectsTableAddIndex extends Migration
     {
         //
         Schema::table('subjects', function(Blueprint $table){
-            $table->dropForeing('subjects_career_id_foreign');
+            $table->dropForeign('subjects_career_id_foreign');
         });
     }
 }
