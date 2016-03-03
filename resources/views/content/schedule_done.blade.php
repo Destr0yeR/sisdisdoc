@@ -7,7 +7,7 @@
 <div>
 	<div class="row">
 		<div class="col-sm-10 col-sm-offset-1 schedule-header">
-			Seleccione la casilla correspondiente a la hora del dia en la que quiere dictar un curso
+			Seleccione la casilla correspondiente a la hora del día en la que quiere dictar un curso
 		</div>
 	</div>
 	
